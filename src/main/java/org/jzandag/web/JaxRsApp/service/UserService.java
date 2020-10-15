@@ -49,7 +49,8 @@ public class UserService {
 	public User updateUser(Long id, User user) {
 		if(!data.getUsers().containsKey(id))
 			throw new NoSuchResourceException();
-		return data.getUsers().put(id, user);
+		data.getUsers().put(id, user);
+		return user;
 	}
 
 	public void deleteUser(Long id) {
